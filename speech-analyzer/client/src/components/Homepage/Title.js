@@ -1,16 +1,16 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import './Title.css'
 
 class Title extends React.Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
         
-    }
+    // }
 
     render() {
         return (
-            <div>
-                test
+            <div className="titlePosition">
+                <h2>Speech Analyzer</h2>
             </div>
             
         );
@@ -18,8 +18,5 @@ class Title extends React.Component {
 }
 
 
-// Title.propTypes = {
-    
-// };
 
 export default Title

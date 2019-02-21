@@ -6,11 +6,14 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import './Footer.css'
 
 
 const styles = {
   root: {
     width: 500,
+    display: "flex",
+    
   },
 };
 

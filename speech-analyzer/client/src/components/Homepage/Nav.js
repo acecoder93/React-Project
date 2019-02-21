@@ -29,9 +29,6 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static" >
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>Speech Analyzer</Typography>
           <Button color="inherit"><Link to="/" className="navButton">Home</Link></Button>
           <Button color="inherit"><Link to="/famous" className="navButton">Famous Speeches</Link></Button>

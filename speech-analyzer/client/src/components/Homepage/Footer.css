@@ -1,7 +1,8 @@
 
 .barPosition{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+    /* display: flex; */
+    /* flex-direction: row;
+    align-items: flex-end; */
+    margin-left: 20%
 
 }

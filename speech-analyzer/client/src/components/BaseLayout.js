@@ -16,7 +16,7 @@ class BaseLayout extends React.Component {
                 <Nav/> <br />
                 {this.props.children} <br />
 
-                <Footer />
+                <Footer className="barPosition"/>
                 
                 
             </div>

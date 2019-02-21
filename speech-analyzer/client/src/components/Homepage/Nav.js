@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import './Nav.css'
 
 const styles = {
   root: {
@@ -26,21 +27,15 @@ function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" >
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
-             
-                <Link to="/">Home</Link>
-                <Link to="/famous">Famous Speeches</Link>
-                <Link to= "/custom">Custom Input</Link>
-
-            
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            Speech Analyzer
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <Typography variant="h6" color="inherit" className={classes.grow}>Speech Analyzer</Typography>
+          <Button color="inherit"><Link to="/" className="navButton">Home</Link></Button>
+          <Button color="inherit"><Link to="/famous" className="navButton">Famous Speeches</Link></Button>
+          <Button color="inherit"><Link to="/custom" className="navButton">Custom</Link></Button>
         </Toolbar>
       </AppBar>
     </div>

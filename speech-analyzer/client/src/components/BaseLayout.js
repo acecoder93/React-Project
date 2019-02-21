@@ -1,6 +1,8 @@
 import React from 'react';
 import Nav from './Homepage/Nav';
 import Footer from './Homepage/Footer'
+import './Homepage/Footer.css'
+
 
 class BaseLayout extends React.Component {
     // constructor(props) {

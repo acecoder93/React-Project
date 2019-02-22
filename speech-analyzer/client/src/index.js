@@ -11,7 +11,7 @@ import famousReducer from './reducer/famousReducer'
 
 
 // // Need to import and insert reducers
-const store = createStore(famousReducer, + window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(famousReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 const app = 
     <Provider store={store}>

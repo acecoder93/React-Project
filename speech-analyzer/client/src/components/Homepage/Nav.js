@@ -28,8 +28,8 @@ function ButtonAppBar(props) {
   return (
     <div className={classes.root}>
       <AppBar position="static" >
-        <Toolbar>
-          <Typography variant="h6" color="inherit" className={classes.grow}>Speech Analyzer</Typography>
+        <Toolbar className="navBar">
+          {/* <Typography variant="h6" color="inherit" className={classes.grow}>Speech Analyzer</Typography> */}
           <Button color="inherit"><Link to="/" className="navButton">Home</Link></Button>
           <Button color="inherit"><Link to="/famous" className="navButton">Famous Speeches</Link></Button>
           <Button color="inherit"><Link to="/custom" className="navButton">Custom</Link></Button>

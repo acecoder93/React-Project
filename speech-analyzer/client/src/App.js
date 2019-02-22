@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from './components/Homepage/Title';
 import About from './components/Homepage/About';
 import data from './components/Homepage/data/data.json';
+import './App.css'
 // import { connect } from 'react-redux';
 
 class App extends Component {
@@ -22,12 +23,10 @@ class App extends Component {
     var newData = data.map((d)=>{
       return (
         <div>
-        <li>{d.speaker}</li>
-        <li>{d.location}</li>
-        <li>{d.date}</li>
-        <li><img alt="" src={d.image}></img></li>
-        {/* <li>{d.purpose}</li>
-        <li>{d.speech}</li> */}
+          <div>{d.speaker}</div>
+          <div>{d.location}</div>
+          <div>{d.date}</div>
+          <div><img alt="" src={d.image}></img></div>
         </div>
       )
     })
@@ -35,7 +34,7 @@ class App extends Component {
     console.log(newData)
 
     return (
-      <div>
+      <div className="background">
         <Title />
         <About key={newData.id} speechData={newData} />
 

@@ -23,10 +23,9 @@ class About extends React.Component {
                         <option value="2">John F. Kennedy</option>
                         <option value="3">Donald Trump</option>
                     </select>
-                    <button onClick={()=>{this.props.selectedSpeaker()}}>Select</button>
-                    <div>{this.props.speechData}</div>
+                    {/* <div>{this.props.speechData}</div> */}
                 </div>
-                <img alt="" className="imageSize" src="http://thecapitalbrand.com/wp-content/uploads/2017/11/Motivational-Speaker.jpg"></img>
+                {/* <img alt="" className="imageSize" src="http://thecapitalbrand.com/wp-content/uploads/2017/11/Motivational-Speaker.jpg"></img> */}
             </div>
             
         );

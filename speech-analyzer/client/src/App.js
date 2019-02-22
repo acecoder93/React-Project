@@ -20,23 +20,23 @@ class App extends Component {
     let data = this.state.speechData.speeches
     console.log(data)
   
-    var newData = data.map((d)=>{
-      return (
-        <div>
-          <div>{d.speaker}</div>
-          <div>{d.location}</div>
-          <div>{d.date}</div>
-          <div><img alt="" src={d.image}></img></div>
-        </div>
-      )
-    })
+    // var newData = data.map((d)=>{
+    //   return (
+    //     <div>
+    //       <div>{d.speaker}</div>
+    //       <div>{d.location}</div>
+    //       <div>{d.date}</div>
+    //       <div><img alt="" src={d.image}></img></div>
+    //     </div>
+    //   )
+    // })
 
-    console.log(newData)
+    // console.log(newData)
 
     return (
       <div className="background">
         <Title />
-        <About key={newData.id} speechData={newData} />
+        <About key={newData.id} speechData={data} />
 
       </div>
     );

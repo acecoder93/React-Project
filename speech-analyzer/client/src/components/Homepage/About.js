@@ -3,22 +3,37 @@ import './About.css';
 
 
 class About extends React.Component {
-    // constructor(props) {
-    //     super(props);
+    constructor(props) {
+        super(props);
+
+        this.state={
+            result: ''
+        }
+
+        }
 
 
-        // }
-
-
-    selectedSpeaker(){
-
+    handleSelectChange = (event) =>{
+        this.setState({
+            result: event.target.value
+        })
     }
+
+    selectedSpeaker(state){
+        if (this.state.result )
+
+        // for (var i = 1; i < speakerData.length; i++){}
+
+
+        
+    }
+  
 
     render() {
         return (
             <div>
                 <div>
-                    <select>
+                    <select onClick={this.handleSelectChange}>
                         <option value="1">Barack Obama</option>
                         <option value="2">John F. Kennedy</option>
                         <option value="3">Donald Trump</option>

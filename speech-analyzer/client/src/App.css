@@ -4,4 +4,55 @@
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
+    margin-left: 5%;
+}
+
+
+/* Page Title  */
+.titleBox{
+    background-color: rgba(0,255,0,0.3);
+    width: 100%;
+    height: 200px;
+}
+
+.titlePosition{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: black;
+}
+
+
+
+
+/* Content Section  */
+
+.bioPicBox{
+    background-color: rgba(0,255,0,0.3);
+    height: 200px;
+    width: 200px;
+    border-radius: 10%;
+    position: relative;
+
+}
+
+.bioPic{
+    height: 175px;
+    width: 175px;
+    opacity: 1;
+    border-radius: 10%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+
+
+.imageSize{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import data from './components/Homepage/data/data.json';
 import './App.css'
+import DisplayCard from './components/Homepage/DisplayCard';
 // import { connect } from 'react-redux';
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
     let array = this.state.speechData.speeches
     console.log(array)
 
-
+    // Matching up drop down selection to JSON data
     for(var i = 0; i < array.length; i++){
       if(array[i].id == e.target.value){
         this.setState({
@@ -27,50 +28,39 @@ class App extends Component {
         })
       }
       else(
-        console.log('no')
+        console.log('No value found')
       )
 
     }
-
-    // this.setState({
-    //     result: e.target.value
-    // })
 }
 
-// Render components by selection
-// speechSelector = (result)=>{
-//   result = this.state.result
-
-
-// }
 
   render() {
-    let data = this.state.speechData.speeches
-    console.log(data)
 
-    var newData = data.map((d)=>{
-      return (
-        <div>
-          <div>{d.speaker}</div>
-          <div>{d.location}</div>
-          <div>{d.date}</div>
-          <div><img alt="" src={d.image}></img></div>
-        </div>
-      )
-    })
-
-    // console.log(newData)
 
     return (
       <div>
         <div className="background">
                 <div>
                 <div className="titlePosition">
-                <div className="titleBox">
-                    <h2>Speech Analyzer</h2>
+                  <div className="titleBox">
+                      <h2>Lets breakdown the speech...</h2>
+                      <p><b>Tone</b> 
+                      is a key factor of communication. It tells an individual or audience what the speaker is feeling. 
+                      It is dependent on:
+                      <ul>
+                        <li>Word Choice</li>
+                        <li>Pitch</li>
+                        <li>Emotion</li>
+                      </ul>
+                      <b>Purpose</b> of this application is to breakdown famous speeches given by various speakers to analyze the tone they utilized.
+                      Each speaker has their own style, and it is important for an individual to determine how they prefer to deliver a message.
+                      Focusing on speakers and the tone they convey in their speeches speaks upon their attitude and perspective. Looking back, we can
+                      begin to understand the effectiveness of the speeches and the tone conveyed. The speeches will be run through IBM Watson's Tone Analyzer.
+                      </p>    
+                  </div> 
                 </div>
-               
-                </div>
+                
             
                     <select onClick={(e) =>this.handleSelectChange(e)}>
                         <option value="0">Select a Speaker</option>
@@ -82,6 +72,7 @@ class App extends Component {
                       <div className="bioPicBox">
                         <img className="bioPic" alt="" src={this.state.result.image}></img>
                       </div>
+                      <DisplayCard data = {this.state.result} />
                       <div>Speaker: {this.state.result.speaker}</div>
                       <div>Date: {this.state.result.date}</div>
                       <div>Purpose: {this.state.result.purpose}</div>
@@ -89,7 +80,7 @@ class App extends Component {
                 
                     </p>
 
-                    {/* <div>{this.props.speechData}</div> */}
+                    <div className=".scrollBox">{this.state.result.speech}</div>
                 </div>
                 {/* <img alt="" className="imageSize" src="http://thecapitalbrand.com/wp-content/uploads/2017/11/Motivational-Speaker.jpg"></img> */}
             </div>

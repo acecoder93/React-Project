@@ -10,7 +10,9 @@ class App extends Component {
 
     this.state ={
       speechData: data,
-      result: ''
+      result: '',
+      like: '',
+      dislike: '',
     }
     console.log(this.state.speechData);
   }
@@ -69,20 +71,10 @@ class App extends Component {
                         <option value="3">Donald Trump</option>
                     </select>
                     <p>
-                      <div className="bioPicBox">
-                        <img className="bioPic" alt="" src={this.state.result.image}></img>
-                      </div>
+            
                       <DisplayCard data = {this.state.result} />
-                      <div>Speaker: {this.state.result.speaker}</div>
-                      <div>Date: {this.state.result.date}</div>
-                      <div>Purpose: {this.state.result.purpose}</div>
-                      {/* <div>Speech: <br></br> {this.state.result.speech}</div> */}
-                
                     </p>
-
-                    <div className=".scrollBox">{this.state.result.speech}</div>
                 </div>
-                {/* <img alt="" className="imageSize" src="http://thecapitalbrand.com/wp-content/uploads/2017/11/Motivational-Speaker.jpg"></img> */}
             </div>
       </div>
     );

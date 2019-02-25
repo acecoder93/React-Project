@@ -11,8 +11,8 @@ const styles = {
   root: {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: "gray",
-    height: 100
+    backgroundColor: "black",
+    height: 80
   },
 };
 

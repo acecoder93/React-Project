@@ -11,6 +11,10 @@ import Chart from 'chart.js';
 const styles = {
   card: {
     maxWidth: 400,
+    marginLeft: 20,
+    marginBottom: 20
+
+
   },
   bullet: {
     display: 'inline-block',

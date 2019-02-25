@@ -1,6 +1,6 @@
 
 .navBar{
-    background-color: cornflowerblue;
+    background-color: rgba(240, 22, 22, 0.794);
     display: flex;
     justify-content: center;
 }

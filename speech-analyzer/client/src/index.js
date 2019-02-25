@@ -7,6 +7,8 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import famousReducer from './reducer/famousReducer'
+import Custom from './components/Custom/Custom'
+
 
 
 
@@ -19,8 +21,7 @@ const app =
             <BaseLayout>
                 <Switch>
                     <Route exact path ="/" component={App} />
-                    {/* <Route path ="/famous" component={Famous} /> */}
-                    {/* <Route path ="/custom" component={Custom} /> */}
+                    <Route path ="/custom" component={Custom} />
                 </Switch>
             </BaseLayout>
         </BrowserRouter>

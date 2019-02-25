@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from './Homepage/Nav';
 import Footer from './Homepage/Footer'
 import './Homepage/Footer.css'
+import './BaseLayout.css'
 
 
 class BaseLayout extends React.Component {
@@ -12,7 +13,7 @@ class BaseLayout extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="background">
                 <Nav/> <br />
                 {this.props.children} <br />
 

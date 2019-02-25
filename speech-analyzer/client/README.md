@@ -1,5 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+NPM INSTALLS:
+npm install react
+npm install react-redux
+npm install redux
+npm install react-browser-router
+npm install watson
+npm install chart.js
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

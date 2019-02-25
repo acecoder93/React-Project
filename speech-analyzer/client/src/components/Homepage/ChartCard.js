@@ -11,7 +11,7 @@ import Chart from 'chart.js';
 const styles = {
   card: {
     maxWidth: 400,
-    marginLeft: 20,
+    marginLeft: 80,
     marginBottom: 20
 
 

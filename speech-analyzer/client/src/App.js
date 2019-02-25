@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import data from './components/Homepage/data/data.json';
 import './App.css'
 import DisplayCard from './components/Homepage/DisplayCard';
+import ChartCard from './components/Homepage/ChartCard';
+import WatsonCard from './components/Homepage/WatsonCard';
+import axios from 'axios';
 // import { connect } from 'react-redux';
 
 class App extends Component {
@@ -13,6 +16,7 @@ class App extends Component {
       result: '',
       like: '',
       dislike: '',
+      watson: ''
     }
     console.log(this.state.speechData);
   }
@@ -28,13 +32,40 @@ class App extends Component {
         this.setState({
           result: array[i]
         })
+        this.speechCall(array[i].speech)
       }
-      else(
-        console.log('No value found')
-      )
-
+      // else(
+      //   console.log('No value found')
+      // )
     }
+
+
 }
+
+  speechCall =(result)=>{
+    console.log(result)
+  axios.get('/custom-text-search', {
+    params: {
+      data: result
+    }
+  })
+}
+  
+
+
+
+
+
+// componentDidMount(){
+//   fetch(data)
+//   // console.log(data)
+//   .then((data)=>{
+//     console.log(data)
+//     data.json()})
+//   }
+    
+    
+
 
 
   render() {
@@ -42,20 +73,13 @@ class App extends Component {
 
     return (
       <div>
-        <div className="background">
+        <div>
                 <div>
                 <div className="titlePosition">
                   <div className="titleBox">
                       <h2>Lets breakdown the speech...</h2>
-                      <p><b>Tone</b> 
-                      is a key factor of communication. It tells an individual or audience what the speaker is feeling. 
-                      It is dependent on:
-                      <ul>
-                        <li>Word Choice</li>
-                        <li>Pitch</li>
-                        <li>Emotion</li>
-                      </ul>
-                      <b>Purpose</b> of this application is to breakdown famous speeches given by various speakers to analyze the tone they utilized.
+                      <p>
+                      <b><u>Purpose:</u></b> of this application is to breakdown famous speeches given by various speakers to analyze the tone they utilized.
                       Each speaker has their own style, and it is important for an individual to determine how they prefer to deliver a message.
                       Focusing on speakers and the tone they convey in their speeches speaks upon their attitude and perspective. Looking back, we can
                       begin to understand the effectiveness of the speeches and the tone conveyed. The speeches will be run through IBM Watson's Tone Analyzer.
@@ -64,16 +88,18 @@ class App extends Component {
                 </div>
                 
             
-                    <select onClick={(e) =>this.handleSelectChange(e)}>
+                    <select className="cardPosition" onClick={(e) =>this.handleSelectChange(e)}>
                         <option value="0">Select a Speaker</option>
                         <option value="1">Barack Obama</option>
                         <option value="2">John F. Kennedy</option>
                         <option value="3">Donald Trump</option>
                     </select>
-                    <p>
-            
+                    
+
                       <DisplayCard data = {this.state.result} />
-                    </p>
+                      <ChartCard />
+                      <WatsonCard />
+                  
                 </div>
             </div>
       </div>

@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+
+router.use(bodyParser.urlencoded({extended: false}))
 
 router.post('/custom-text-search', (req,res)=>{
   console.log('this is the backend')
   // console.log(req.query.data); AXIOS
-  console.log(req);
-  console.log(req.body.data);
+  // console.log(req);
+  console.log("request body: " + req.body);
+
+  for (var x in req.body){
+    console.log(x)
+  }
+  // console.log(req.body.data);
 
 
 

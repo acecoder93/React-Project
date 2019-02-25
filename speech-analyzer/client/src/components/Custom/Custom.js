@@ -23,6 +23,7 @@ class Custom extends React.Component {
 
 
     handleSubmit(e){
+        
         if(this.refs.name.value === ""){
             alert("Name is required");
         }
@@ -32,12 +33,6 @@ class Custom extends React.Component {
         else if(this.refs.speech.value === ""){
             alert("Speech / Text is required")
         }
-        // else{
-        // this.setState({
-        //     name: this.refs.name.value,
-        //     purpose: this.refs.purpose.value,
-        //     speech: this.refs.speech.value
-        // })}
 
         e.preventDefault()
 

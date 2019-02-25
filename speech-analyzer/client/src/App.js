@@ -44,7 +44,8 @@ class App extends Component {
 
   speechCall =(result)=>{
     console.log(result)
-  axios.get('/custom-text-search', {
+
+  axios.get('http://localhost:3001/custom-text-search', {
     params: {
       data: result
     }

@@ -31,9 +31,7 @@ function ButtonAppBar(props) {
         <Toolbar className="navBar">
           {/* <Typography variant="h6" color="inherit" className={classes.grow}>Speech Analyzer</Typography> */}
           <Button color="inherit"><Link to="/" className="navButton">Home</Link></Button>
-          <Button color="inherit"><Link to="/famous" className="navButton">Famous Speeches</Link></Button>
           <Button color="inherit"><Link to="/custom" className="navButton">Custom</Link></Button>
-          <Button color="inherit"><Link to="/feedback" className="navButton">Feedback</Link></Button>
         </Toolbar>
       </AppBar>
     </div>

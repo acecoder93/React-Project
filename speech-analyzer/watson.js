@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser')
 
-router.get('/custom-text-search', (req,res)=>{
-  console.log('this is the backend');
+router.post('/custom-text-search', (req,res)=>{
+  console.log('this is the backend')
+  // console.log(req.query.data); AXIOS
   console.log(req);
+  console.log(req.body.data);
 
 
 

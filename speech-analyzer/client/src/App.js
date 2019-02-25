@@ -45,11 +45,22 @@ class App extends Component {
   speechCall =(result)=>{
     console.log(result)
 
-  axios.get('http://localhost:3001/custom-text-search', {
-    params: {
-      data: result
-    }
-  })
+    // fetch('http://localhost:3001/custom-text-search', {
+    //   method: 'GET',
+    //   body: {result}
+    // })
+
+
+
+
+
+    axios.post('/custom-text-search', {
+        data: result
+      }
+    )
+    .catch(error =>{
+      console.log(error.response)
+    })
 }
   
 

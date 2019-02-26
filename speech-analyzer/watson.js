@@ -51,7 +51,6 @@ router.use(bodyParser.json());
   tone(text)
 
 
-
   function documentTone(ibmInput){
     // console.log(ibmInput.document_tone)
     let toneResult = ibmInput.document_tone.tones
@@ -61,6 +60,5 @@ res.send({
       info: toneResult
     })
 }})
-
 
   module.exports = router;

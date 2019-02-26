@@ -5,6 +5,9 @@ import DisplayCard from './components/Homepage/DisplayCard';
 import ChartCard from './components/Homepage/ChartCard';
 import WatsonCard from './components/Homepage/WatsonCard';
 import axios from 'axios';
+import watsonAction from './action/watsonAction'
+import watsonReducer from './reducer/watsonReducer'
+import { store } from 'redux';
 // import { connect } from 'react-redux';
 
 class App extends Component {
@@ -16,7 +19,7 @@ class App extends Component {
       result: '',
       like: '',
       dislike: '',
-      watson: ''
+      watson: []
     }
     // console.log(this.state.speechData);
   }
@@ -49,9 +52,21 @@ class App extends Component {
     )
     .then(results =>{
       console.log(results.data)
-      // for (var x in results){
-      //   console.log("frontend information: " +x)
-      // }
+      // var toneResults = results.data.map(tone =>{
+      //   return (
+      //   <div>
+      //     <li>{tone.tone_name}</li>
+      //     <li>{tone.score}</li>
+      //   </div>)
+      // })
+
+      this.setState({
+        watson: results.data
+      })
+
+      if(this.state.watson === true){
+        store.dispatch(watsonReducer(this.state.watson))
+      }
       console.log("test finished")
     })
     .catch(error =>{
@@ -59,15 +74,20 @@ class App extends Component {
     })
 }
 
-  // componentWillUpdate(){
-  // fetch('/sendBack')
-  //   .then(response => {
-  //     console.log("this is my respone back:" + alert(JSON.stringify((response))))
-  //   })
-  // }
-  
+
+
 
   render() {
+
+    // if (this.state.watson == true){
+    //   console.log(this.state.watson)
+    // }
+    // else{
+    //   console.log("no worries");
+    // }
+
+
+
     return (
       <div>
         <div>
@@ -106,16 +126,19 @@ class App extends Component {
   mapStateToProps(state){
     return {
       result: state.result,
+      watson: state.watson
 
       
     }
 
   }
-  mapDispatchToProps(dispatch){
-    return {
+  // mapDispatchToProps(dispatch){
+  //   return {
+  //     updateWatson: dispatch(watsonAction())
 
-    }
-  }
+      
+  //   }
+  // }
 
 
 

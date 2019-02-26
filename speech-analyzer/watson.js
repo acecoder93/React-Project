@@ -12,8 +12,8 @@ var text = "";
 
 router.post('/custom-text-search', (req,res)=>{
 
-  text =  JSON.stringify(req.body.data);
-  console.log(text);
+  text =  req.body.data;
+  // console.log(text);
 
 
 
@@ -41,21 +41,24 @@ function tone(text){
       if (error) {
             console.log(error);
           } else { 
-            ibmResponse = JSON.stringify(toneAnalysis, null, 2);
+            ibmResponse = toneAnalysis;
             documentTone(ibmResponse)
           }
     })
   }
 }
 
-function documentTone(ibmInput){
-  console.log(ibmInput);
-  console.log(ibmInput["document_tone"]);
 
-  // for(var i = 0;  i < ibmInput.length; i++){
-  //   if (i == "document_tone"){
-  //     console.log(i);
-  //   }}
+
+function documentTone(ibmInput){
+  // console.log(ibmInput.document_tone)
+  let toneResult = ibmInput.document_tone.tones
+
+  for(var i = 0;  i < toneResult.length; i++){
+    if (toneResult[i]){
+         let toneName = toneResult[i].tone_name
+         let toneScore = toneResult[i].score
+    }}
 
 }
 

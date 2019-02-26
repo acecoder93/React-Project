@@ -18,7 +18,7 @@ class App extends Component {
       dislike: '',
       watson: ''
     }
-    console.log(this.state.speechData);
+    // console.log(this.state.speechData);
   }
 
   // Dropdown Selection
@@ -53,14 +53,7 @@ class App extends Component {
 }
   
 
-    
-    
-
-
-
   render() {
-
-
     return (
       <div>
         <div>

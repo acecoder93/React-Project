@@ -6,7 +6,11 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Chart from 'chart.js';
+import ReactChartkick, { PieChart } from 'react-chartkick'
+import Chart from 'chart.js'
+
+ReactChartkick.addAdapter(Chart)
+
 
 const styles = {
   card: {
@@ -40,7 +44,10 @@ function ChartCard(props) {
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           Chart Breakdown
+
         </Typography>
+        <PieChart data={[["Blueberry", 44], ["Strawberry", 23]]} />
+
 
  
       </CardContent>

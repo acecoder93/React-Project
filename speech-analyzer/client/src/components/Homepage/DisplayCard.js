@@ -116,3 +116,4 @@ DisplayCard.propTypes = {
 };
 
 export default withStyles(styles)(DisplayCard);
+

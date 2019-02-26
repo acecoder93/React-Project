@@ -49,6 +49,8 @@ class Custom extends React.Component {
                     <label className="text">Speech / Text:</label> <input type = "text" ref="speech" value = {this.state.speech} onChange={this.handleChange.bind(this)} /><br></br>
                     <input type = "submit" value = "submit"></input>
                 </form>
+
+                
             </div>
 
             

@@ -47,10 +47,24 @@ class App extends Component {
         data: result,
       }
     )
+    .then(results =>{
+      console.log(results.data)
+      // for (var x in results){
+      //   console.log("frontend information: " +x)
+      // }
+      console.log("test finished")
+    })
     .catch(error =>{
       console.log(error.response)
     })
 }
+
+  // componentWillUpdate(){
+  // fetch('/sendBack')
+  //   .then(response => {
+  //     console.log("this is my respone back:" + alert(JSON.stringify((response))))
+  //   })
+  // }
   
 
   render() {

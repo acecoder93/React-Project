@@ -43,33 +43,16 @@ class App extends Component {
 }
 
   speechCall =(result)=>{
-    console.log(result)
-
-    
-
     axios.post('/custom-text-search', {
         data: result,
       }
-    ).then(results => {
-      console.log("post results: " + results)
-    })
+    )
     .catch(error =>{
       console.log(error.response)
     })
 }
   
 
-
-
-
-
-// componentDidMount(){
-//   fetch(data)
-//   // console.log(data)
-//   .then((data)=>{
-//     console.log(data)
-//     data.json()})
-//   }
     
     
 

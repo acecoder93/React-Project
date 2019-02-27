@@ -6,6 +6,7 @@ import ChartCard from './components/Homepage/ChartCard';
 import WatsonCard from './components/Homepage/WatsonCard';
 import axios from 'axios';
 import watsonAction from './action/watsonAction'
+import { connect } from 'react-redux';
 
 
 
@@ -117,12 +118,13 @@ class App extends Component {
       watson: state.watson
     }
   }
-  // mapDispatchToProps(dispatch){
-  //   return {
-  //     updateWatson: dispatch(watsonAction())
-  //   }
-  // }
+  mapDispatchToProps(dispatch){
+    return {
+      updateWatson: watson => dispatch(watsonAction(watson))
+    }
+  }
 
 }
 
 export default App;
+// export default connect(this.mapStateToProps, this.mapDispatchToProps)(App);

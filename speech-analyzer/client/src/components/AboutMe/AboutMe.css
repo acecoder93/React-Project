@@ -1,0 +1,14 @@
+.fontStyle{
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding: 10px;
+}
+
+.backgroundShadow{
+    background-color: rgba(41, 44, 41, 0.75);
+    width: 90%;
+    border-radius: 5px;
+    margin-left: 5%;
+
+
+}

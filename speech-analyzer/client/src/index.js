@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import famousReducer from './reducer/famousReducer'
 import Custom from './components/Custom/Custom'
+import About from './components/AboutMe/AboutMe';
 
 
 
@@ -22,6 +23,7 @@ const app =
                 <Switch>
                     <Route exact path ="/" component={App} />
                     <Route path ="/custom" component={Custom} />
+                    <Route path ="/about" component={About} />
                 </Switch>
             </BaseLayout>
         </BrowserRouter>

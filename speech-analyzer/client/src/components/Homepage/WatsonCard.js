@@ -32,6 +32,7 @@ const styles = {
 
 
 function WatsonCard(props) {
+  
   const { classes } = props;
 
   
@@ -41,6 +42,7 @@ function WatsonCard(props) {
     <CardContent>
       <Typography className={classes.title} color="textSecondary" gutterBottom>
         Watson Breakdown        
+
       </Typography>
     </CardContent>
 

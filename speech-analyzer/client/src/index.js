@@ -6,15 +6,17 @@ import BaseLayout from './components/BaseLayout';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import famousReducer from './reducer/famousReducer'
-import Custom from './components/Custom/Custom'
+import Custom from './components/Custom/Custom';
 import About from './components/AboutMe/AboutMe';
+import combineReducers from './reducer/combineReducer';
+
+
 
 
 
 
 // // Need to import and insert reducers
-const store = createStore(famousReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(combineReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 const app = 
     <Provider store={store}>

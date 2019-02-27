@@ -1,11 +1,12 @@
 
 
-function watsonReducer(state =  {watson: 0}, action){
+function watsonReducer(state =  {watson: []}, action){
+    
     switch(action.type){
         case 'change':
-            return (state = {
+            return ({
                 ...state,
-                watson: action.payload
+                watson: state.watson.concat(action.payload)
             })
         default:
             return state

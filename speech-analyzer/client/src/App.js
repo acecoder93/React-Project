@@ -47,10 +47,17 @@ class App extends Component {
       }
     )
     .then(results =>{
-      console.log(results.data)
-      this.setState({
-        watson: results.data
-      })
+      // store.dispatch(watsonAction(results.data))
+      // console.log(results);
+      console.log(results.data);
+    
+      this.props.updateWatson(results.data)
+      
+      // this.setState({
+      //   watson: results.data
+      // })
+
+
 
       // function next(watson){
       //   this.mapDispatchToProps.updateWatson(watson)
@@ -72,9 +79,6 @@ class App extends Component {
 
   render() {
 
-    
-    
-    
     return (
       <div>
         <div>
@@ -103,7 +107,7 @@ class App extends Component {
 
                       <DisplayCard data = {this.state.result} />
                       <ChartCard  />
-                      <WatsonCard />
+                      <WatsonCard watsonData={this.props.watson} />
 
                   
                 </div>
@@ -112,19 +116,24 @@ class App extends Component {
     );
   }
 
-  mapStateToProps(state){
-    return {
-      result: state.result,
-      watson: state.watson
-    }
-  }
-  mapDispatchToProps(dispatch){
-    return {
-      updateWatson: watson => dispatch(watsonAction(watson))
-    }
-  }
+
 
 }
 
-export default App;
-// export default connect(this.mapStateToProps, this.mapDispatchToProps)(App);
+
+
+function mapStateToProps(state){
+  return {
+    result: state.result,
+    watson: state.watson
+  }
+}
+function mapDispatchToProps(dispatch){
+  return {
+    updateWatson: watson => dispatch(watsonAction(watson))
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+

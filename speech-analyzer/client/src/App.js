@@ -6,9 +6,10 @@ import ChartCard from './components/Homepage/ChartCard';
 import WatsonCard from './components/Homepage/WatsonCard';
 import axios from 'axios';
 import watsonAction from './action/watsonAction'
-import watsonReducer from './reducer/watsonReducer'
-import { store } from 'redux';
-// import { connect } from 'react-redux';
+
+
+
+
 
 class App extends Component {
   constructor(props){
@@ -17,11 +18,8 @@ class App extends Component {
     this.state ={
       speechData: data,
       result: '',
-      like: '',
-      dislike: '',
       watson: []
     }
-    // console.log(this.state.speechData);
   }
 
   // Dropdown Selection
@@ -37,14 +35,11 @@ class App extends Component {
         })
         this.speechCall(array[i].speech)
       }
-      // else(
-      //   console.log('No value found')
-      // )
     }
+  }
 
 
-}
-
+  // Backend Axios Call
   speechCall =(result)=>{
     axios.post('/custom-text-search', {
         data: result,
@@ -52,21 +47,16 @@ class App extends Component {
     )
     .then(results =>{
       console.log(results.data)
-      // var toneResults = results.data.map(tone =>{
-      //   return (
-      //   <div>
-      //     <li>{tone.tone_name}</li>
-      //     <li>{tone.score}</li>
-      //   </div>)
-      // })
-
       this.setState({
         watson: results.data
       })
 
-      if(this.state.watson === true){
-        store.dispatch(watsonReducer(this.state.watson))
-      }
+      // function next(watson){
+      //   this.mapDispatchToProps.updateWatson(watson)
+      // }
+
+      // next(this.state.watson)
+
       console.log("test finished")
     })
     .catch(error =>{
@@ -74,20 +64,16 @@ class App extends Component {
     })
 }
 
+// }
+
 
 
 
   render() {
 
-    // if (this.state.watson == true){
-    //   console.log(this.state.watson)
-    // }
-    // else{
-    //   console.log("no worries");
-    // }
-
-
-
+    
+    
+    
     return (
       <div>
         <div>
@@ -111,11 +97,13 @@ class App extends Component {
                         <option value="2">John F. Kennedy</option>
                         <option value="3">Donald Trump</option>
                     </select>
+                    {/* <div className="red">{breakdown}</div> */}
                     
 
                       <DisplayCard data = {this.state.result} />
-                      <ChartCard />
+                      <ChartCard  />
                       <WatsonCard />
+
                   
                 </div>
             </div>
@@ -127,20 +115,13 @@ class App extends Component {
     return {
       result: state.result,
       watson: state.watson
-
-      
     }
-
   }
   // mapDispatchToProps(dispatch){
   //   return {
   //     updateWatson: dispatch(watsonAction())
-
-      
   //   }
   // }
-
-
 
 }
 

@@ -1,16 +1,17 @@
 
 
-function watsonReducer(state, action){
-    
-    switch (action.type){
+function watsonReducer(state =  {watson: 0}, action){
+    switch(action.type){
         case 'change':
-            return {
+            return (state = {
                 ...state,
-                watson: action.data
-            }
+                watson: action.payload
+            })
         default:
             return state
     }
+
+
 }
 
 export default watsonReducer

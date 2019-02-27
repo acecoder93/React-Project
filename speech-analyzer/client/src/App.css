@@ -32,7 +32,11 @@
 .cardPosition{
     margin-left: 50%;
     font: 20px
+}
 
-
+.red{
+    background-color: purple;
+    height: 50px;
+    width: 300px;
 }
 

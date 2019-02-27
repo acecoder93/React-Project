@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ReactChartkick, { PieChart } from 'react-chartkick'
 import Chart from 'chart.js'
@@ -35,22 +33,28 @@ const styles = {
 
 
 
+// mapStateToProps(state){
+//   return {
+//     watson: state.watson
+
+    
+//   }}
+
+
 function ChartCard(props) {
   const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+
+  // console.log(this.props.watson)
 
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           Chart Breakdown
-
         </Typography>
         <PieChart data={[["Blueberry", 44], ["Strawberry", 23]]} />
-
-
- 
       </CardContent>
+
      
     </Card>
   );

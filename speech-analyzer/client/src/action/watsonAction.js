@@ -2,7 +2,7 @@
 function watsonAction(result){
     return {
         type: 'change',
-        data: result
+        payload: result
     }
 }
 

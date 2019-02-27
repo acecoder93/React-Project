@@ -18,7 +18,7 @@ class App extends Component {
 
     this.state ={
       speechData: data,
-      result: '',
+      result: "",
       watson: []
     }
   }
@@ -49,9 +49,10 @@ class App extends Component {
     .then(results =>{
       // store.dispatch(watsonAction(results.data))
       // console.log(results);
+      console.log(results);
       console.log(results.data);
     
-      this.props.updateWatson(results.data)
+      this.props.updateWatson(results.data.info)
       
       // this.setState({
       //   watson: results.data
@@ -130,7 +131,7 @@ function mapStateToProps(state){
 }
 function mapDispatchToProps(dispatch){
   return {
-    updateWatson: watson => dispatch(watsonAction(watson))
+    updateWatson: (watson) => dispatch(watsonAction(watson))
   }
 }
 

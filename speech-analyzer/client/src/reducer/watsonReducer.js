@@ -12,7 +12,7 @@ function watsonReducer(state, action){
         case 'change':
             return ({
                 ...state,
-                watson: state.watson.push(action.payload)
+                watson: state.watson.concat(action.payload)
                 // watson: state.watson.concat(action.payload)
             })
         default:

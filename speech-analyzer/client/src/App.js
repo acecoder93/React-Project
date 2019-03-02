@@ -19,6 +19,7 @@ class App extends Component {
     this.state ={
       speechData: data,
       result: "",
+      // Need to make sure of watson array 
       watson: []
     }
   }
@@ -49,8 +50,8 @@ class App extends Component {
     .then(results =>{
       // store.dispatch(watsonAction(results.data))
       // console.log(results);
-      console.log(results);
-      console.log(results.data);
+      // console.log(results);
+      // console.log(results.data);
     
       this.props.updateWatson(results.data.info)
       

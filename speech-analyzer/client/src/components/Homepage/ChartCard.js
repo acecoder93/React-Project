@@ -33,12 +33,7 @@ const styles = {
 
 
 
-// mapStateToProps(state){
-//   return {
-//     watson: state.watson
 
-    
-//   }}
 
 
 function ChartCard(props) {
@@ -63,5 +58,11 @@ function ChartCard(props) {
 ChartCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+function mapStateToProps(state){
+  return{
+    watson: state.watson
+  }
+}
 
 export default withStyles(styles)(ChartCard);

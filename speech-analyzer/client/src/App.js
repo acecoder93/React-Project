@@ -27,7 +27,6 @@ class App extends Component {
   // Dropdown Selection
   handleSelectChange = (e) =>{
     let array = this.state.speechData.speeches
-    console.log(array)
 
     // Matching up drop down selection to JSON data
     for(var i = 0; i < array.length; i++){
@@ -48,6 +47,7 @@ class App extends Component {
       }
     )
     .then(results =>{
+      console.log(results.data.info);
       // store.dispatch(watsonAction(results.data))
       // console.log(results);
       // console.log(results);

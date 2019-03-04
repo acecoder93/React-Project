@@ -6,6 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import ReactChartkick, { PieChart } from 'react-chartkick'
 import Chart from 'chart.js'
+import Button from '@material-ui/core/Button';
+import { connect } from 'react-redux';
 
 ReactChartkick.addAdapter(Chart)
 
@@ -35,11 +37,9 @@ const styles = {
 
 
 
-
 function ChartCard(props) {
   const { classes } = props;
 
-  // console.log(this.props.watson)
 
   return (
     <Card className={classes.card}>
@@ -49,8 +49,9 @@ function ChartCard(props) {
         </Typography>
         <PieChart data={[["Blueberry", 44], ["Strawberry", 23]]} />
       </CardContent>
-
-     
+      <Button variant="contained" className={classes.button} >
+        Update
+      </Button>
     </Card>
   );
 }
@@ -65,4 +66,7 @@ function mapStateToProps(state){
   }
 }
 
-export default withStyles(styles)(ChartCard);
+
+
+
+export default  connect (mapStateToProps, null)(withStyles(styles)(ChartCard));
